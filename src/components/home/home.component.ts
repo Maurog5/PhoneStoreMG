@@ -1,38 +1,34 @@
-import { Component, OnInit } from '@angular/core';
-import { PaisesService } from '../service/paises.service';
-import { IPais } from '../../app/models/pais.model';
+import { Component } from '@angular/core';
+import { ICelular, listPhones } from 'src/app/models/phone.model';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
-  providers: [PaisesService]
 })
-export class HomeComponent  {
-  title: string;
-  paises: IPais[] = [];
-  isAboutRoute: boolean = false;
-  searchText1: string = '';
+export class HomeComponent {
+  listPhones: ICelular[] = listPhones;
 
-  constructor(private paisesService: PaisesService) {
-    this.title = "Hola estoy en Angular ";
-    this.paisesService.getPaises().subscribe(
-      (paises) => {
-        this.paises = paises.map((pais: any) => ({
-          name: pais.name,
-          flags: pais.flags,
-          population: pais.population,
-          capital: pais.capital,
-          area: pais.area,
-          region: pais.region,
-          maps: pais.maps,
-          currencies: pais.currencies,
-        }));
-      },
-      (error) => {
-        console.error("Error al obtener los países:", error);
-      }
-    );
+  carouselImages: string[] = [
+    "../../assets/cel-banner.jpeg",
+    "../../assets/cel-banner.jpeg",
+    "../../assets/cel-banner.jpeg",
+    "../../assets/cel-banner.jpeg",
+    "../../assets/cel-banner.jpeg",
+    "../../assets/cel-banner.jpeg"
+  ];
+  slickConfig = {
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    dots: true,
+    arrows: true,
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 2000
+  };
+  
+  
+
+  constructor() {
   }
-
 }

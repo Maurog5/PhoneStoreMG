@@ -1,7 +1,9 @@
-import { Component, Input } from '@angular/core';
-import { FavoritesService } from '../service/favorites-service/favorites-service.component';
-import { IPais } from '../../app/models/pais.model';
-import { DomSanitizer } from '@angular/platform-browser';
+// card-detail.component.ts
+import { Component, Inject } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { ICelular } from 'src/app/models/phone.model';
+import { CarStoreService } from '../service/carStore.service';
 
 @Component({
   selector: 'app-card-detail',
@@ -9,50 +11,39 @@ import { DomSanitizer } from '@angular/platform-browser';
   styleUrls: ['./card-detail.component.css']
 })
 export class CardDetailComponent {
-  @Input() paises: IPais[] = [];
-  itemsPerPage: number = 6;
-  currentPage: number = 1;
+  celular: any;
 
-  constructor(private favoritesService: FavoritesService, private sanitizer: DomSanitizer) {}
+  constructor(private carStoreService: CarStoreService,
+    private snackBar: MatSnackBar,
+    public dialogRef: MatDialogRef<CardDetailComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any
+  ) {
+    this.celular = data;
+  }
 
-  toggleFavorite(pais: IPais) {
-    pais.favorite = !pais.favorite;
+  esProductoEnCarrito(producto: any): boolean {
+    const carrito = this.carStoreService.obtenerCarrito();
+    return carrito.some((item) => item.id === producto.id);
+  }
 
-    if (pais.favorite) {
-      this.favoritesService.addToFavorites(pais);
+
+  agregarAlCarrito(producto: any) {
+    if (!this.esProductoEnCarrito(producto)) {
+      this.carStoreService.agregarAlCarrito(producto);
+
+      // Muestra la notificación usando MatSnackBar
+      this.snackBar.open('Producto agregado al carrito', 'Cerrar', {
+        duration: 2000, 
+      });
     } else {
-      this.favoritesService.removeFromFavorites(pais);
+      // Manejar el caso cuando el producto ya está en el carrito
+      this.snackBar.open('El producto ya está en el carrito', 'Cerrar', {
+        duration: 2000, 
+      });
     }
   }
-
-  openGoogleMaps(mapUrl: string | undefined) {
-    if (mapUrl) {
-      window.open(mapUrl, '_blank');
-    } else {
-      console.error('URL de mapa no definida para el país seleccionado.');
-    }
-  }
-
-  getPaginatedPaises(): IPais[] {
-    const startIndex = (this.currentPage - 1) * this.itemsPerPage;
-    const endIndex = startIndex + this.itemsPerPage;
-    return this.paises.slice(startIndex, endIndex);
-  }
-
-  onPageChange(page: number) {
-    this.currentPage = page;
-  }
-
-  totalPages(): number[] {
-    const total = Math.ceil(this.paises.length / this.itemsPerPage);
-    const maxPagesToShow = 10;
-  
-    if (total <= maxPagesToShow) {
-      return Array.from({ length: total }, (_, i) => i + 1);
-    } else {
-      const startPage = Math.max(1, this.currentPage - Math.floor(maxPagesToShow / 2));
-      const endPage = Math.min(total, startPage + maxPagesToShow - 1);
-      return Array.from({ length: endPage - startPage + 1 }, (_, i) => startPage + i);
-    }
+  close() {
+    debugger
+    this.dialogRef.close();
   }
 }

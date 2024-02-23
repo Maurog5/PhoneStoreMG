@@ -1,0 +1,45 @@
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: whitesmoke;
+}
+
+.Cardphones {
+  flex: 0 0 calc(33.33% - 20px);
+  max-width: calc(33.33% - 20px);
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  position: relative; 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: space-between; 
+  margin-top: 10px;
+}
+
+.Flag {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+}
+
+.card-details {
+  padding: 10px;
+  position: absolute; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.title-product  {
+  font-size: 24px;
+  font-weight: bold;
+  margin-left: 20px;
+}
+.card:hover,
+.card-img-top:hover {
+  background-color: #f0f0f0;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.202);
+  transform: scale(1.05); /* Puedes ajustar el valor según la cantidad de zoom deseada */
+  transition: background-color 0.5s ease, box-shadow 0.5s ease, transform 0.5s ease; 
+}

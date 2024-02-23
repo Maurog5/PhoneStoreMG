@@ -1,0 +1,24 @@
+
+  .container {
+    margin: 0;
+    padding: 0;
+  }
+ 
+  .banner__media {
+    width: 100vw;
+ height: auto;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; 
+  }
+  
+ 
+  .carousel-caption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    padding: 1.25rem; 
+    background: rgba(0, 0, 0, 0.5); 
+    color: #fff; 
+  }
+ 

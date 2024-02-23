@@ -3,27 +3,21 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from '../components/navbar/navbar.component';
 import {AboutComponent} from '../components/about/about.component';
 import { HomeComponent } from '../components/home/home.component';
-import { WelcomeComponent } from '../components/welcome/welcome.component';
+import { CardComponent} from 'src/components/card/card.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { MatIconModule } from '@angular/material/icon';
+import { CarStoreComponent } from '../components/shoppingList/shoppingListcomponent';
+import { CarStoreService } from 'src/components/service/carStore.service';
 import { CardDetailComponent } from '../components/card-detail/card-detail.component';
-import {  SearchBarComponent } from '../components/searchbar/searchbar.component';
-import { FavoritesComponent } from '../components/favorites/favorites.component';
-import { PaginadoComponent } from '../components/paginado/paginado.component';
-import { CreateCountryComponent} from '../components/create-country/create-country.component';
-import { CountryServiceComponent } from '../components/service/country-service/country-service.component'; 
-
-
-import { ReactiveFormsModule } from '@angular/forms';
-import { EditCountryComponent } from '../components/edit-country/edit-country.component';
-
-
-
-
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -31,18 +25,9 @@ import { EditCountryComponent } from '../components/edit-country/edit-country.co
     NavbarComponent,
     AboutComponent,
     HomeComponent,
-    WelcomeComponent,
+    CardComponent,
+    CarStoreComponent,
     CardDetailComponent,
-    SearchBarComponent,
-    FavoritesComponent,
-    PaginadoComponent,
-    CreateCountryComponent,
-    EditCountryComponent,
-    
-   
-
-
-  
   ],
  
   
@@ -52,13 +37,16 @@ import { EditCountryComponent } from '../components/edit-country/edit-country.co
      HttpClientModule,
      AppRoutingModule,
      RouterModule,
-     ReactiveFormsModule,
+     BrowserAnimationsModule,
+     SlickCarouselModule,
+     MatIconModule,
+     MatDialogModule,
+     MatSnackBarModule,
+     MatTooltipModule,
   ],
 
-
-  providers: [
-    CountryServiceComponent,
-  ],
+    providers: [CarStoreService],
+  
   bootstrap: [AppComponent]
 })
 export class AppModule { }

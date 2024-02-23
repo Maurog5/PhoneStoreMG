@@ -1,0 +1,26 @@
+<!-- card.component.html -->
+<div class="title-product mt-3">
+  <h2> <strong>
+    Productos en Stock
+  </strong> </h2>
+</div>
+<div class="card-container">
+  <div class="Cardphones" *ngFor="let celular of listPhones">
+    <div class="card" style="border-radius: 20px;" (click)="openCardDetail(celular)">
+      <img [src]="celular.display.image" class="card-img-top" style="border-radius: 20px;" alt="Phone Image">
+      <div class="card-body">
+        <h5 class="card-title">{{ celular.brand }} {{ celular.model }}</h5>
+        <p class="card-text">Price: ${{ celular.price }}</p>
+        <button class="btn btn-primary" (click)="openCardDetail(celular)">
+          <i class="material-icons" style="vertical-align: middle; margin-bottom: 3px;">visibility</i> Ver Detalle
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="listPhones.length === 0" class="no-phones-message">
+    <p>No se encontraron nombres de celulares.</p>
+  </div>
+</div>
+
+

@@ -1,69 +1,124 @@
-/* boton para volver */
-button { 
-  position: fixed; 
-  left: 10px; 
-  top: 2%; 
-  
-  width: 150px;
-  background-color: #dbeafa;
-  color: rgb(0, 0, 0); 
-  border: none;
-  padding: 5px 5px 5px 5px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-button:hover {
-  background-color: #cceb1b; 
-}
 
 .navbar {
-  
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff; /* Fondo de la barra de navegación */
+  z-index: 1000; /* Asegura que la barra de navegación esté en la parte superior */
+}
+
+.show{
   display: flex;
-  justify-content:center;
-  align-items: center;
-  background-color: #384b89; /* color navbar */
-  color: aliceblue;
-  padding: 20px 0;
-  border-radius: 5%;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 1;
+  position: absolute;
+  background-color: white;
+  border-radius: 0,5rem;
+  border: 1px solid gray;
+  right: 0px;
+  top: 83px;
+  min-width: 40%;
+}
+.navbar-cart-items{
+  position: relative;
+  left: 8,5px;
+  top: -0,8rem;
+  color: white;
+  border: 1px solid rgba(255,255,255,01);
+  border-radius: 50%;
+  background-color: red;
+  height: 20px;
+  width: 20px;
+}
+.navbar-title  {
+  font-size: 24px;
+  font-weight: bold;
+  margin-left: 20px;
 }
 
 .nav-list {
   list-style: none;
-  display: flex;
-  justify-content: center;
-  margin: 11;
+  margin: 0;
   padding: 0;
+  display: flex;
 }
 
 .nav-list li {
-  margin: 0 15px;
+  margin-right: 20px;
 }
 
-.nav-list li a {
+.nav-list a {
   text-decoration: none;
-  color: inherit;
+  color: #000000;
   font-weight: bold;
+  font-size: 16px;
+  transition: color 0.3s ease;
 }
 
-.nav-list li a:hover,
-.nav-list li a.active {
-  color: yellow;
+.nav-list a:hover {
+  color: #89ef87; 
 }
 
 
-@media screen and (max-width: 768px) {
-  .navbar {
-    padding: 5px 0;
-    text-align: center; 
+/* styles.css o navbar.component.css */
+.badge {
+  background-color: red; /* Color de fondo */
+  color: white; /* Color del texto */
+  border-radius: 50%; /* Forma del borde para hacerlo circular */
+  padding: 0.2em 0.5em; /* Espaciado interno */
+  font-size: 0.8em; /* Tamaño del texto */
+  position: absolute; /* Posición absoluta con respecto al botón del carrito */
+  top: 0;
+  right: 0;
+}
+
+nav {
+  /* Estilos por defecto */
+  transition: background-color 0.3s ease; /* Agrega una transición suave */
+}
+
+/* Aplica estilos cuando la clase 'scrolled' está presente */
+nav.scrolled {
+  background-color: #96a6a9; /* Cambia el color de fondo al hacer scroll */
+  /* Otros estilos adicionales */
+}
+
+.navbar-title.scrolled-title {
+  color: #ffffff; /* Cambia el color del texto al hacer scroll */
+  /* Otros estilos adicionales */
+}
+
+.navbar-cart{
+  position: relative;
+  margin-right: 1rem;
+
+}
+.navbar-cart-items{
+  position: relative;
+  left: 8,5px;
+  top: -0,8rem;
+  color: white;
+  border: 1px solid rgba(255,255,255,01);
+  border-radius: 50%;
+  background-color: red;
+  height: 20px;
+  width: 20px;
+}
+
+.animated-icon {
+  animation: moveIcon 2s infinite; /* Ajusta la duración y otras propiedades según tus preferencias */
+}
+
+@keyframes moveIcon {
+  0% {
+    transform: translateY(0);
   }
-  
-  .nav-list {
-    flex-direction: column; 
-    align-items: center; 
+  50% {
+    transform: translateY(-5px); /* Ajusta la distancia que se moverá hacia arriba */
   }
-  
-  .nav-list li {
-    margin: 10px 0;
+  100% {
+    transform: translateY(0);
   }
 }
