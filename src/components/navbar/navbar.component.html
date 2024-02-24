@@ -6,29 +6,10 @@
   </div>
   <div class="nav-list">
     <button class="btn btn-primary mx-2" routerLink="/" routerLinkActive="active">Home</button>
+    <button class="btn btn-primary mx-2" routerLink="/about" routerLinkActive="active">About</button>
     <button class="navbar-cart btn btn btn-light" routerLink="/store" routerLinkActive="active" (click)="onToggleCart()">
       <mat-icon>shopping_cart</mat-icon>
       <span class="badge">{{ cantidadProductosEnCarrito }}</span>
     </button>
   </div>
 </nav>
-
-
-
-
-
-<!-- <nav class="navbar">
-  <div class="navbar-logo">
-      <i class="fa-solid fa-store"></i>
-  </div>
-  <div class="navbar-title"> <h1>Star-Wars App</h1>  </div>
-  <div class="navbar-cart" (click)="onToggleCart()">
-      <div class="navbar-cart-items">
-          <p>0</p>
-      </div>
-  </div>
-</nav>
-
-<div class="cart"[ngClass]="{ show: viewCart }" >
-  <app-shopping-list></app-shopping-list>
-</div> -->

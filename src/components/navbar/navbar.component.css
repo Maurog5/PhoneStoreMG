@@ -5,7 +5,7 @@
   left: 0;
   width: 100%;
   background-color: #ffffff; /* Fondo de la barra de navegación */
-  z-index: 1000; /* Asegura que la barra de navegación esté en la parte superior */
+  z-index: 1000;
 }
 
 .show{
@@ -64,7 +64,7 @@
 
 /* styles.css o navbar.component.css */
 .badge {
-  background-color: red; /* Color de fondo */
+  background-color: red; 
   color: white; /* Color del texto */
   border-radius: 50%; /* Forma del borde para hacerlo circular */
   padding: 0.2em 0.5em; /* Espaciado interno */
@@ -108,7 +108,7 @@ nav.scrolled {
 }
 
 .animated-icon {
-  animation: moveIcon 2s infinite; /* Ajusta la duración y otras propiedades según tus preferencias */
+  animation: moveIcon 2s infinite; 
 }
 
 @keyframes moveIcon {
@@ -116,7 +116,7 @@ nav.scrolled {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-5px); /* Ajusta la distancia que se moverá hacia arriba */
+    transform: translateY(-5px); 
   }
   100% {
     transform: translateY(0);

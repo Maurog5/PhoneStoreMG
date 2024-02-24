@@ -1,0 +1,23 @@
+/* about.component.css */
+.page-container-about {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  h1 {
+    color: #333;
+  }
+  
+  p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #666;
+  }
+  
+  strong {
+    color: #2196F3; /* Color primario de Material Design */
+  }
+  
+  

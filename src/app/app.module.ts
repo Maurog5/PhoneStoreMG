@@ -18,7 +18,7 @@ import { CardDetailComponent } from '../components/card-detail/card-detail.compo
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { AgradecimientoComponent } from 'src/components/agradecimiento/agradecimiento.component';
+import { SuccessfulSaleComponent } from 'src/components/successful-sale/successful-sale.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +29,7 @@ import { AgradecimientoComponent } from 'src/components/agradecimiento/agradecim
     CardComponent,
     CarStoreComponent,
     CardDetailComponent,
-    AgradecimientoComponent,
+    SuccessfulSaleComponent,
     
   ],
  

@@ -6,10 +6,11 @@
 
   <!-- Botones de opción para cambiar el tipo de descuento -->
   <div class="descuento-buttons">
-    <button class="btn btn-info" (click)="cambiarTipoDescuento('comun')">Descuento Común</button>
-    <button class="btn btn-warning" (click)="cambiarTipoDescuento('vip')">Descuento VIP</button>
-    <button class="btn btn-danger" (click)="cambiarTipoDescuento('especial')">Descuento Especial</button>
+    <button class="btn btn-info" (click)="aplicarDescuento('comun')">Aplicar Descuento 100</button>
+    <button class="btn btn-warning" (click)="aplicarDescuento('vip')">Aplicar Descuento 300</button>
+    <button class="btn btn-danger" (click)="aplicarDescuento('especial')">Aplicar Descuento 500</button>
   </div>
+
 
   <div class="total-price">
     <p>Precio Total: ${{ totalPrice }}</p>
@@ -29,7 +30,7 @@
           <button (click)="aumentarCantidad(producto)" class="btn btn-success">+</button>
         </div>
       </div>
-      <button class="btn btn-primary btn-comprar" routerLink="/agradecimiento" routerLinkActive="active" (click)="realizarCompra()">Comprar</button>
+      <button class="btn btn-primary btn-comprar" routerLink="/successfulSale" routerLinkActive="active" >Comprar</button>
     </div>
   </div>
 </div>

@@ -179,7 +179,7 @@ const celular6: ICelular = {
     removable: false,
   },
   operatingSystem: "Android",
-  price: 400000,
+  price: 500,
 };
 
 

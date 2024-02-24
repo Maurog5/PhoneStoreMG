@@ -58,6 +58,21 @@ export class CarStoreComponent implements OnInit {
     this.tipoDescuento = tipo;
     this.actualizarTotalPrice()
   }
+  aplicarDescuento(tipo: string) {
+    switch (tipo) {
+      case 'comun':
+        this.totalPrice = this.carStoreService.aplicarDescuento100();
+        break;
+      case 'vip':
+        this.totalPrice = this.carStoreService.aplicarDescuento300();
+        break;
+      case 'especial':
+        this.totalPrice = this.carStoreService.aplicarDescuento500();
+        break;
+      default:
+        break;
+    }
+  }
 
   private actualizarPrecioTotalDesc() {
     this.descuent25 = this.carStoreService.obtenerPrecioTotal(); 
@@ -67,10 +82,5 @@ export class CarStoreComponent implements OnInit {
     this.totalPrice = this.shoppingCar.reduce((total, producto) => total + producto.price * producto.quantity, 0);
   }
 
-  // Simular compra 
-  realizarCompra() {
-    const snackBarRef = this.snackBar.open('¡Compra realizada con éxito!', 'Cerrar');
-    snackBarRef.afterDismissed().subscribe(() => {
-    });
-  }
+ 
 }
