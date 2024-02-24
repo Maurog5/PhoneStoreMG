@@ -1,5 +1,6 @@
-# PhoneStore
-Para inicializar el proyecto 
-1- clonar el repo 
-2- escribir el comando en consola npm install  en la carpeta raaiz del proyecto
-3- para levantar el servidor solo tirar el siguiente comando  = ng serve --port 4200
+# PhoneStore😀
+Los pasos a seguir para levantar el proyecto son : 
+1- Clonar el repositorio en una carpeta nueva 
+2- Dentro de la carpeta PhoneStore MG escribir el siguiente comando npm i --force 
+3- Para levantar el proyecto escribir el siguiente comando en la carpeta src (ng serve --port 4200) 
+y lsito eso seria todo. 
