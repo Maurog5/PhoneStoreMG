@@ -33,7 +33,7 @@ const celular1: ICelular = {
   display: {
     size: 6.2,
     resolution: "1440x3200",
-    image: "/assets/images.jpeg", 
+    image: "assets/samsunggalaxyy211 (1).jpg", 
   },
   storage: {
     internal: 128,
@@ -48,7 +48,8 @@ const celular1: ICelular = {
     removable: false,
   },
   operatingSystem: "Android",
-  price: 999,
+  price: 
+  850000,
 };
 
 const celular2: ICelular = {
@@ -59,7 +60,7 @@ const celular2: ICelular = {
   display: {
     size: 6.1,
     resolution: "1170x2532",
-    image: "/assets/images.jpeg", 
+    image: "/assets/iphone13 (2).jpg", 
   },
   storage: {
     internal: 256,
@@ -74,17 +75,17 @@ const celular2: ICelular = {
     removable: false,
   },
   operatingSystem: "iOS",
-  price: 1099,
+  price: 900000,
 };
 const celular3: ICelular = {
   id: "3",
   favorite: true,
   brand: "SAMSUMG",
-  model: "s j8",
+  model: "j8",
   display: {
     size: 5,
     resolution: "112",
-    image: "/assets/images.jpeg", 
+    image: "/assets/j8 (2).jpg", 
   },
   storage: {
     internal: 2526,
@@ -99,12 +100,12 @@ const celular3: ICelular = {
     removable: false,
   },
   operatingSystem: "iOS",
-  price: 0,
+  price: 60000,
 };
 
 //
 const celular4: ICelular = {
-  id: "1",
+  id: "4",
   favorite: false,
   brand: "Apple",
   model: "iPhone 12",
@@ -126,44 +127,44 @@ const celular4: ICelular = {
     removable: false,
   },
   operatingSystem: "iOS",
-  price: 999,
+  price: 700000,
 };
 
 const celular5: ICelular = {
-  id: "2",
+  id: "5", 
   favorite: true,
-  brand: "Samsung",
-  model: "Galaxy S21",
+  brand: "Xiaomi",
+  model: "Note 13 Pro",
   display: {
-    size: 6.2,
-    resolution: "2400 x 1080",
-    image: "/assets/images.jpeg", 
+    size: 6.7,
+    resolution: "2560 x 1440",
+    image: "/assets/xiaomi (1).jpeg", 
   },
   storage: {
-    internal: 128,
-    external: true,
+    internal: 256,
+    external: false,
   },
   cameras: {
-    front: 10,
-    rear: 64,
+    front: 20,
+    rear: 108,
   },
   battery: {
-    capacity: 4000,
+    capacity: 5000,
     removable: false,
   },
-  operatingSystem: "Android",
-  price: 899,
+  operatingSystem: "MIUI (Xiaomi)",
+  price: 1200000,
 };
 
 const celular6: ICelular = {
-  id: "3",
+  id: "6",
   favorite: true,
   brand: "Huawei",
   model: "P40 Pro",
   display: {
     size: 6.58,
     resolution: "2640 x 1200",
-    image: "/assets/images.jpeg", 
+    image: "assets/huawei (1).jpeg" 
   },
   storage: {
     internal: 256,
@@ -178,7 +179,7 @@ const celular6: ICelular = {
     removable: false,
   },
   operatingSystem: "Android",
-  price: 1099,
+  price: 400000,
 };
 
 

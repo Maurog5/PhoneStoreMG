@@ -18,6 +18,7 @@ import { CardDetailComponent } from '../components/card-detail/card-detail.compo
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { AgradecimientoComponent } from 'src/components/agradecimiento/agradecimiento.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     CardComponent,
     CarStoreComponent,
     CardDetailComponent,
+    AgradecimientoComponent,
+    
   ],
  
   

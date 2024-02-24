@@ -32,4 +32,33 @@ export class CarStoreService {
   actualizarCarrito(carrito: any[]) {
     this.carSubject.next(carrito);
   }
+
+  obtenerPrecioTotal(tipoDescuento: string = 'comun') {
+    const carrito = this.carSubject.value;
+    const cantidadProductos = carrito.reduce((total, producto) => total + producto.quantity, 0);
+    const precioTotal = carrito.reduce((total, producto) => total + producto.price * producto.quantity, 0);
+  
+    // Aplicar descuento del 25% solo si hay 4 o más productos
+    const descuento25 = cantidadProductos >= 4 ? precioTotal * 0.25 : 0;
+  
+    // Sumar descuento del tipo al descuento total
+    const descuentoTotal = descuento25 + this.calcularDescuentoTipo(tipoDescuento, cantidadProductos);
+  
+    // Retornar precio total con descuentos
+    return precioTotal - descuentoTotal;
 }
+calcularDescuentoTipo(tipoDescuento: string, cantidadProductos: number): number {
+    switch (tipoDescuento) {
+        case 'comun':
+            return cantidadProductos >= 10 ? 100 : 0;
+        case 'vip':
+            return cantidadProductos >= 10 ? 300 : 0;
+        case 'especial':
+            return cantidadProductos >= 10 ? 50000 : 0;
+        default:
+            return 0;
+    }
+}
+}
+
+

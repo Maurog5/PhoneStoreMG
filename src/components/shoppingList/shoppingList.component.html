@@ -1,25 +1,38 @@
-<button class="btn btn-secondary" onclick="history.back()">Vover atras</button>
+<!-- shoopingList -->
+<button class="btn btn-secondary" onclick="history.back()">Volver atras</button>
 
-
-<div *ngIf="shoppingCar.length > 0; else noProducts" class="product-list">
+<div *ngIf="shoppingCar.length > 0; else noProducts" class="product-list shopping-cart">
   <h2>Productos en el Carrito</h2>
+
+  <!-- Botones de opción para cambiar el tipo de descuento -->
+  <div class="descuento-buttons">
+    <button class="btn btn-info" (click)="cambiarTipoDescuento('comun')">Descuento Común</button>
+    <button class="btn btn-warning" (click)="cambiarTipoDescuento('vip')">Descuento VIP</button>
+    <button class="btn btn-danger" (click)="cambiarTipoDescuento('especial')">Descuento Especial</button>
+  </div>
+
+  <div class="total-price">
+    <p>Precio Total: ${{ totalPrice }}</p>
+    <p>Precio Total con Descuento del 25%: ${{ descuent25 }}</p>
+  </div>
   <div *ngFor="let producto of shoppingCar" class="product-card">
     <div class="card">
+      <img [src]="producto.display.image" class="card-img-top" alt="Phone Image" />
       <div class="card-body">
         <h5 class="card-title">{{ producto.brand }} {{ producto.model }}</h5>
-        <img [src]="producto.display.image" class="card-img-top" style="border-radius: 20px;" alt="Phone Image">
+        <p class="card-text">Display Size: {{ producto.display.size }}</p>
         <p class="card-text">Cantidad: {{ producto.quantity }}</p>
         <p class="card-text">Precio: ${{ producto.price }}</p>
         <div class="quantity-controls">
-          <button (click)="disminuirCantidad(producto)">-</button>
-          <button (click)="aumentarCantidad(producto)">+</button>
+          <button (click)="disminuirCantidad(producto)" class="btn btn-danger">-</button>
+          <span class="quantity">{{ producto.quantity }}</span>
+          <button (click)="aumentarCantidad(producto)" class="btn btn-success">+</button>
         </div>
       </div>
+      <button class="btn btn-primary btn-comprar" routerLink="/agradecimiento" routerLinkActive="active" (click)="realizarCompra()">Comprar</button>
     </div>
   </div>
-  <p class="total-price">Precio Total: ${{ totalPrice }}</p>
 </div>
-
 <ng-template #noProducts>
   <div class="empty-cart-message">
     <img src="../../assets/carrito.jpeg" alt="Empty Cart Image" class="empty-cart-image">
