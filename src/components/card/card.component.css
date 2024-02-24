@@ -40,6 +40,5 @@
 .card-img-top:hover {
   background-color: #f0f0f0;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.202);
-  transform: scale(1.05); /* Puedes ajustar el valor según la cantidad de zoom deseada */
   transition: background-color 0.5s ease, box-shadow 0.5s ease, transform 0.5s ease; 
 }

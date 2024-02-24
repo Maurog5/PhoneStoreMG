@@ -1,6 +1,6 @@
 :host {
-    border-radius: 50%; /* Ajusta el valor según tus preferencias */
-    overflow: hidden; /* Para asegurar que el contenido no se desborde del modal */
+    border-radius: 50%; 
+    overflow: hidden; 
   }
   
  

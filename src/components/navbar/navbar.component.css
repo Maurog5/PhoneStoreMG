@@ -65,29 +65,26 @@
 /* styles.css o navbar.component.css */
 .badge {
   background-color: red; 
-  color: white; /* Color del texto */
-  border-radius: 50%; /* Forma del borde para hacerlo circular */
-  padding: 0.2em 0.5em; /* Espaciado interno */
-  font-size: 0.8em; /* Tamaño del texto */
-  position: absolute; /* Posición absoluta con respecto al botón del carrito */
+  color: white; 
+  border-radius: 50%; 
+  padding: 0.2em 0.5em; 
+  font-size: 0.8em; 
+  position: absolute; 
   top: 0;
   right: 0;
 }
 
 nav {
-  /* Estilos por defecto */
-  transition: background-color 0.3s ease; /* Agrega una transición suave */
+  transition: background-color 0.3s ease; 
 }
 
-/* Aplica estilos cuando la clase 'scrolled' está presente */
+
 nav.scrolled {
-  background-color: #96a6a9; /* Cambia el color de fondo al hacer scroll */
-  /* Otros estilos adicionales */
+  background-color: #96a6a9; 
 }
 
 .navbar-title.scrolled-title {
-  color: #ffffff; /* Cambia el color del texto al hacer scroll */
-  /* Otros estilos adicionales */
+  color: #ffffff; 
 }
 
 .navbar-cart{
