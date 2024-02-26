@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { CarStoreService } from '../service/carStore.service';
-import { Router } from '@angular/router';
-import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-shopping-list',
@@ -15,26 +13,31 @@ export class CarStoreComponent implements OnInit {
 
   //para ver el precio total 
   totalPrice: number = 0;
-  tipoDescuento: string = 'comun'; // Tipo de descuento predeterminado
-
+  
   onProductClick() {
     this.viewCart = false;
   }
-
+  
   constructor(
     private carStoreService: CarStoreService,
-    private router: Router,
-    private snackBar: MatSnackBar
-  ) {}
-
-  ngOnInit() {
-    this.carStoreService.car$.subscribe((car) => {
-      this.shoppingCar = car;
-      this.actualizarTotalPrice();
-      this.actualizarPrecioTotalDesc();
-    });
+    ) {}
+    
+    ngOnInit() {
+      this.carStoreService.car$.subscribe((car) => {
+        this.shoppingCar = car;
+        this.actualizarTotalPrice();
+        this.actualizarPrecioTotalDesc();
+      });
+    }
+    private actualizarPrecioTotalDesc() {
+      this.descuent25 = this.carStoreService.obtenerPrecioTotal(); 
   }
- 
+  
+    private actualizarTotalPrice() {
+      this.totalPrice = this.shoppingCar.reduce((total, producto) => total + producto.price * producto.quantity, 0);
+    }
+    
+  //TODO BOTONERA PARA AUMENTAR Y DISMINUIR LA CANTIDAD DE PRODUCTOS 
   aumentarCantidad(producto: any) {
     const index = this.shoppingCar.findIndex(p => p.id === producto.id);
     if (index !== -1) {
@@ -53,34 +56,31 @@ export class CarStoreComponent implements OnInit {
     }
   }
 
-  // Actualizar el tipo de descuento
-  cambiarTipoDescuento(tipo: string) {
-    this.tipoDescuento = tipo;
-    this.actualizarTotalPrice()
-  }
-  aplicarDescuento(tipo: string) {
-    switch (tipo) {
-      case 'comun':
-        this.totalPrice = this.carStoreService.aplicarDescuento100();
-        break;
-      case 'vip':
-        this.totalPrice = this.carStoreService.aplicarDescuento300();
-        break;
-      case 'especial':
-        this.totalPrice = this.carStoreService.aplicarDescuento500();
-        break;
-      default:
-        break;
-    }
-  }
+  
 
-  private actualizarPrecioTotalDesc() {
-    this.descuent25 = this.carStoreService.obtenerPrecioTotal(); 
+  //TODO BOTONERA DE DESCUENTOS POR TIPO 
+  Descuent100() {
+  // Verifico que el totalPrice sea mayor o igual a 100 antes de aplicar el descuento
+  if (this.totalPrice >= 100) {
+    this.totalPrice -= 100; // Resto 100 al totalPrice
+  } else {
+    console.log('No se puede aplicar un descuento de 100 porque el total es menor a 100');
+  }
 }
 
-  private actualizarTotalPrice() {
-    this.totalPrice = this.shoppingCar.reduce((total, producto) => total + producto.price * producto.quantity, 0);
+Descuent300() {
+  if (this.totalPrice >= 300) {
+    this.totalPrice -= 300; 
+  } else {
+    console.log('No se puede aplicar un descuento de 300 porque el total es menor a 300');
   }
-
+}
+Descuent500() {
+  if (this.totalPrice >= 500) {
+    this.totalPrice -= 500; 
+  } else {
+    console.log('No se puede aplicar un descuento de 500 porque el total es menor a 500');
+  }
+}
  
 }
