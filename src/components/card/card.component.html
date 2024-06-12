@@ -1,26 +1,68 @@
-<!-- card.component.html -->
-<div class="title-product mt-3">
-  <h2> <strong>
-    Productos en Stock
-  </strong> </h2>
-</div>
-<div class="card-container">
-  <div class="Cardphones" *ngFor="let celular of listPhones">
-    <div class="card" style="border-radius: 20px;" (click)="openCardDetail(celular)">
-      <img [src]="celular.display.image" class="card-img-top" style="border-radius: 20px;" alt="Phone Image">
-      <div class="card-body">
-        <h5 class="card-title">{{ celular.brand }} {{ celular.model }}</h5>
-        <p class="card-text">Price: ${{ celular.price }}</p>
-        <button class="btn btn-primary" (click)="openCardDetail(celular)">
-          <i class="material-icons" style="vertical-align: middle; margin-bottom: 3px;">visibility</i> Ver Detalle
-        </button>
+
+<div class=" mt-3 row">
+  <!-- Columna izquierda con la imagen -->
+  <div class="phone-portada col-md-6">
+    <div ngClass="mx-3" *ngIf="selectedCellphone"></div>
+    <div class="card-container mx-3">
+      <h2 class="card-title"></h2>
+      <div class="Cardphones">
+        <img
+          class="img-iphone12"
+          src="../../assets/pngimg.com - iphone_12_PNG3.png"
+          alt="iphone12"
+        />
       </div>
     </div>
   </div>
 
-  <div *ngIf="listPhones.length === 0" class="no-phones-message">
-    <p>No se encontraron nombres de celulares.</p>
+  <!-- Columna derecha para el texto -->
+  <div class="animation-scroll col-md-6 texto-columna mt-5">
+    <div>
+      <h2>Experimenta la Excelencia con el iPhone 12 Pro</h2>
+      <p>
+        Descubre por qué el iPhone 12 Pro es la elección ideal para tu
+        experiencia móvil:
+      </p>
+      <ol>
+        <li>
+          <strong>Tecnología Avanzada:</strong> Disfruta de la potencia y
+          elegancia con su pantalla Super Retina XDR y sistema de cámara
+          profesional.
+        </li>
+        <li>
+          <strong>Fotos y Videos Impresionantes:</strong> Captura momentos
+          inolvidables con su sistema de cámara profesional y modo Noche.
+        </li>
+        <li>
+          <strong>Rendimiento Superior:</strong> Equipado con el chip A14 Bionic
+          para un rendimiento excepcional en cualquier tarea.
+        </li>
+        <li>
+          <strong>Diseño Elegante y Duradero:</strong> Su diseño en acero
+          inoxidable y vidrio garantiza resistencia al agua y al polvo.
+        </li>
+        <li>
+          <strong>Experiencia de Usuario Incomparable:</strong> Lleva tu
+          experiencia móvil al siguiente nivel con la comodidad y la innovación
+          de Apple.
+        </li>
+      </ol>
+      <p>¡Descubre todo lo que el iPhone 12 Pro puede hacer por ti!</p>
+    </div>
   </div>
 </div>
 
+<section>
+  <h1>Agregados Recientemente</h1>
+  <div class="phones_adds mx-3">
+    <div *ngFor="let item of phones">
+      <img
+        class="add-phone-form-img"
+        [src]="item?.image_url" 
+        alt= "{{ item.nombre }}"
+      />
+      <p class="title-phone-card">{{ item.nombre }}</p>
+    </div>
+  </div>
+</section>
 

@@ -1,4 +1,5 @@
 /* about.component.css */
+@import url("../../styles.css");
 .page-container-about {
     max-width: 800px;
     margin: 0 auto;
