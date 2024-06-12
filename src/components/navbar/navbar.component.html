@@ -1,15 +1,24 @@
-<!-- navbar.component.html -->
-<nav class="navbar" [ngClass]="{'scrolled': scrolled}">
-  <div class="navbar-title" [ngClass]="{'scrolled-title': scrolled}">
-    PhoneStore
-    <mat-icon class="animated-icon" style="vertical-align: middle; margin-bottom: 3px;">phone_iphone</mat-icon>
+<nav class="navbar" >
+  <div class="navbar-title">
+    <div class="brand">
+      <h1 style="color: aliceblue; font-size: 1.2em;">
+        <a style="text-decoration: none;color: rgb(0, 0, 0);" href="#home">Phone & Mg</a>
+        
+      </h1>
+    </div>
   </div>
-  <div class="nav-list">
-    <button class="btn btn-primary mx-2" routerLink="/" routerLinkActive="active">Home</button>
-    <button class="btn btn-primary mx-2" routerLink="/about" routerLinkActive="active">About</button>
-    <button class="navbar-cart btn btn btn-light" routerLink="/store" routerLinkActive="active" (click)="onToggleCart()">
-      <mat-icon>shopping_cart</mat-icon>
-      <span class="badge">{{ cantidadProductosEnCarrito }}</span>
-    </button>
+
+  <div class="nav_items">
+      <a  routerLink="" routerLinkActive="active"style="color: rgb(0, 0, 0); text-decoration: none; font-size: 1.1rem;">Inicio </a>
+      <a routerLink="/about" routerLinkActive="active" style="color: rgb(0, 0, 0); text-decoration: none;font-size: 1.1rem;">Acerce de </a>
+      <a routerLink="/form" routerLinkActive="active" style="color: rgb(0, 0, 0); text-decoration: none;font-size: 1.1rem;">Formulario</a>
+    </div>
+
+  <div class="nav_toggle">
+    <span></span>
+    <span></span>
+    <span></span>
   </div>
 </nav>
+
+

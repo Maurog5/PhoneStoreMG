@@ -1,13 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ICelular, listPhones } from 'src/app/models/phone.model';
+
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
 })
-export class HomeComponent {
+export class HomeComponent  {
   listPhones: ICelular[] = listPhones;
+
 
   carouselImages: string[] = [
     "../../assets/cel-banner.jpeg",
@@ -29,6 +31,8 @@ export class HomeComponent {
   
   
 
-  constructor() {
+  constructor( ) {
   }
+  
+
 }

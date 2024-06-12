@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
@@ -19,6 +19,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { SuccessfulSaleComponent } from 'src/components/successful-sale/successful-sale.component';
+import { FormComponent } from '../components/form/form.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,8 @@ import { SuccessfulSaleComponent } from 'src/components/successful-sale/successf
     CarStoreComponent,
     CardDetailComponent,
     SuccessfulSaleComponent,
+    FormComponent,
+    
     
   ],
  
@@ -46,6 +49,8 @@ import { SuccessfulSaleComponent } from 'src/components/successful-sale/successf
      MatDialogModule,
      MatSnackBarModule,
      MatTooltipModule,
+     ReactiveFormsModule,
+     HttpClientModule
   ],
 
     providers: [CarStoreService],
