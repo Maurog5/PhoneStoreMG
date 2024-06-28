@@ -1,50 +1,47 @@
+.container {
+  margin: 0;
+  padding: 0;
+}
 
-  .container {
-    margin: 0;
-    padding: 0;
+.welcome-video-wall-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh; /* Ocupa toda la altura de la ventana */
+  background-color: #000; /* Color de fondo opcional */
+  overflow: hidden;
+}
 
-  }
- 
-  .banner__media {
-    
-    width: 100vw;
-    min-height: auto;
-    margin: 0;
-    padding: 0;
-    overflow: hidden; 
-  }
-  
- 
-  .carousel-caption {
-    position: absolute;
-    left: 0;
-    right: 0;
-    padding: 1.25rem; 
-    background: rgba(0, 0, 0, 0.5); 
-    color: #fff; 
-  }
- 
+.welcome-video-content-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
 
+.welcome-video-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Asegura que el video cubra todo el área sin distorsión */
+}
+
+/* Media Queries para pantallas más pequeñas */
+@media (max-width: 768px) {
   .welcome-video-wall-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100vh; /* Ocupa toda la altura de la ventana */
-    background-color: #000; /* Color de fondo opcional */
-    overflow: hidden;
+    height: 50vh; /* Ajusta la altura para pantallas pequeñas */
   }
-  
-  .welcome-video-content-container {
-    position: relative;
-    width: 100%;
-    height: 100%;
-  }
-  
+
   .welcome-video-video {
-    width: 100%;
-    height: auto;
-    max-height: 100%;
     object-fit: cover; /* Asegura que el video cubra todo el área sin distorsión */
   }
-  
+}
+
+@media (max-width: 480px) {
+  .welcome-video-wall-container {
+    height: 40vh; /* Ajusta aún más la altura para pantallas muy pequeñas */
+  }
+
+  .welcome-video-video {
+    object-fit: cover; /* Asegura que el video cubra todo el área sin distorsión */
+  }
+}

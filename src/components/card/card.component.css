@@ -1,153 +1,71 @@
+.section-img-details {
+  padding: 20px;
+}
+
+.phone-portada {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .card-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: rgba(233, 233, 233, 0.92);
-  border-radius: 10%;
-
-}
-
-.Cardphones {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start; 
-  width: 40vw; 
-}
-
-.card-body-principal {
-  display: flex;
-  justify-content: flex-start; 
-  width: 100%; 
-  
-}
-
-.card-body {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .img-iphone12 {
-  padding: 10px;
-  max-width: 80%;
+  width: 100%;
+  max-width: 500px; /* Aumenta el tamaño máximo de la imagen */
   height: auto;
-  border-radius: 8px;
-  filter:drop-shadow(
-    0 0 10px rgba(0,0,0,.8)
-  )
 }
 
-.img-iphone12:hover{
-  padding: 0;
+.texto-columna {
+  padding: 20px;
 }
 
-.title-phone-card {
-  margin-top: 0.5em;
-  font-size: 1.2em;
-  font-weight: bold;
-  text-align: center;
+@media (max-width: 768px) {
+  .phone-portada {
+    margin-bottom: 20px;
+  }
+
+  .img-iphone12 {
+    max-width: 80%;
+  }
+}
+
+.stock {
+  padding: 20px;
 }
 
 .phones_adds {
-  display: grid;
-  gap: 1em;
-  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
-  width: 100%; 
-  padding: 1em; 
-}
-
-.add-phone-form-img{
-    width: 60%; 
-    height: auto; 
-  filter:drop-shadow(
-    0 0 10px rgba(0,0,0,.8)
-  )
-
-}
-
-
-.card-container-adds {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: rgb(255, 255, 255);
-  border-radius: 10%;
-
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
 }
 
-
-
-
-/* section stock  */
-.stock{
-  background-color: #fffffffd
+.phone-card-container {
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 200px;
+  width: 100%;
 }
 
-.title-section{
-  padding: 10px;
-  font-size: 2em;
-  display: flex;
-  justify-content: flex-start;
-
+.imgcec {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
 }
-.imgcec{
-  /*  para que las imagines esten todas alineadas a la misma altura  */
-  height: 250px;
-  width: 250px;
-  object-fit: cover;
-  /*  para elimimar el fondo de las imagenes  */
-  filter:brightness(1.1);
-  mix-blend-mode:multiply;
-  }
 
+.add-product-section {
+  padding: 20px;
+  text-align: center;
+}
 
-
-  .phone-card-container {
-    /* contenedor de cada tarjeta */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 16px;
-    margin: 16px;
-    transition: transform 0.2s;
-  }
-
-  .phone-card-container:hover {
-    transform: translateY(-5px);
-  }
-  
-  
-
-
-  .add-product-section {
-    background-color: #f8f9fa;
-    padding: 40px 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .add-product-section h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
-  }
-  
-  .add-product-section p {
-    font-size: 1.2em;
-    margin-bottom: 30px;
-  }
-  
-  .add-product-section .btn {
-    font-size: 1.2em;
-    padding: 10px 20px;
-    border-radius: 8px;
-    transition: background-color 0.3s, transform 0.3s;
-  }
-  
-  .add-product-section .btn:hover {
-    background-color: #0056b3;
-    transform: translateY(-3px);
-  }
+.add-product-section .btn-primary {
+  margin-top: 15px;
+}

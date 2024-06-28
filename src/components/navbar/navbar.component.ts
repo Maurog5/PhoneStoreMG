@@ -11,7 +11,7 @@ export class NavbarComponent implements OnInit {
   cantidadProductosEnCarrito: number = 0;
   scrolled: boolean = false;
   viewCart: boolean = false;
-
+  isMenuOpen:boolean=false;
   constructor(private carStoreService: CarStoreService) {}
 
   ngOnInit() {
@@ -28,7 +28,7 @@ export class NavbarComponent implements OnInit {
   }
 
  
-  onToggleCart() {
-    this.viewCart = !this.viewCart
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
   }
 }
