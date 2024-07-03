@@ -5,7 +5,7 @@ export interface Phone {
 image_url: any;
     id: number;
     nombre: string;
-    tipo: string;
+    price: number;
     data: string;
     modelo: string;
     pais: Pais;

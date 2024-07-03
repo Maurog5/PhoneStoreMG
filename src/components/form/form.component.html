@@ -1,81 +1,51 @@
-<div class="container">
-  <button onclick="history.back()">Go Back</button>
-  <div class="form-register">
-    <h2>Crear phone</h2>
-    <form [formGroup]="phoneForm" (ngSubmit)="save()">
-      <div>
-        <label for="nombre">Nombre:</label>
-        <input id="nombre" formControlName="nombre" />
-      </div>
-      <div>
-        <label for="tipo">Tipo:</label>
-        <input id="tipo" formControlName="tipo" />
-      </div>
-      <div>
-        <label for="data">Data:</label>
-        <input id="data" formControlName="data" />
-      </div>
-      <div>
-        <label for="modelo">Modelo:</label>
-        <input id="modelo" formControlName="modelo" />
-      </div>
-      <div>
-        <label for="imageUrl">URL de la imagen:</label>
-        <input id="imageUrl" formControlName="image_url" />
-      </div>
-      <div>
-        <label for="pais">País:</label>
-        <select id="pais" formControlName="pais">
-          <option value="" disabled selected>Seleccionar país</option>
-          <option *ngFor="let item of paises" [ngValue]="item">
-            {{ item.nombre }}
-          </option>
-        </select>
-      </div>
-      <div>
-        <label for="estado">Estado:</label>
-        <select id="estado" formControlName="estado">
-          <option value="" disabled selected>Seleccionar estado</option>
-          <option *ngFor="let item of estados" [ngValue]="item">
-            {{ item.nombre }}
-          </option>
-        </select>
-      </div>
-      <button type="submit" class="btn btn-primary"  >Guardar</button>
-    </form>
+<div style="background-color: aliceblue; height: 100%">
+  <button class="btn-back mt-2 mx-4" onclick="history.back()">Go Back</button>
+  <div class="container mt-2">
+    <div class="form-register">
+      <h2 class = "title-form" >Create phone</h2>
+      <form [formGroup]="phoneForm" (ngSubmit)="save()">
+        <div>
+          <label for="nombre">Name:</label>
+          <input id="nombre" formControlName="nombre" />
+        </div>
+        <div>
+          <label for="modelo">Model:</label>
+          <input id="modelo" formControlName="modelo" />
+        </div>
+        <div>
+          <label for="data">Specifications:</label>
+          <input id="data" formControlName="data" />
+        </div>
+        <div>
+          <label for="imageUrl">Image URL:</label>
+          <input id="imageUrl" formControlName="image_url" />
+        </div>
+        <div>
+          <label for="pais">Country:</label>
+          <select id="pais" formControlName="pais">
+            <option value="" disabled selected>Seleccionar país</option>
+            <option *ngFor="let item of paises" [ngValue]="item">
+              {{ item.nombre }}
+            </option>
+          </select>
+        </div>
+        <div>
+          <label for="estado">State:</label>
+          <select id="estado" formControlName="estado">
+            <option value="" disabled selected>Seleccionar estado</option>
+            <option *ngFor="let item of estados" [ngValue]="item">
+              {{ item.nombre }}
+            </option>
+          </select>
+        </div>
+        <div>
+          <label for="price">Price$:</label>
+          <input type="number" id="price" formControlName="price" />
+        </div>
+        <div style="display: flex; justify-content: flex-end">
+          <button type="submit" class="btn btn-primary">Save</button>
+        </div>
+      </form>
+    </div>
   </div>
 </div>
-
-<h2>Telefonos registrados</h2>
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Nombre</th>
-        <th>Tipo</th>
-        <th>Data</th>
-        <th>Modelo</th>
-        <th>Pais</th>
-        <th>Estado</th>
-        <th>Opciones</th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <tr *ngFor="let item of phones">
-
-        <th>{{item.nombre}}</th>
-        <th>{{item.tipo}}</th>
-        <th>{{item?.data}}</th>
-        <th>{{item.modelo}}</th>
-        <th>{{item.pais?.nombre}}</th>
-        <th>{{item.estado?.nombre}}</th>
-        
-        <td>
-          <button type="button" class="btn btn-info" (click)="editPhone(item)" >Editar</button>
-          <button type="button" class="btn btn-danger"(click)="deletePhone(item)">Eliminar</button>
-        </td>
-        
-      </tr>
-    </tbody>
-  </table>
-

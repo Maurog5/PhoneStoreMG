@@ -31,7 +31,7 @@ export class FormComponent implements OnInit {
       //* agregamos el id que no sea requerido 
       id:[''],
       nombre: ['', Validators.required],
-      tipo: ['', Validators.required],
+      price: ['', Validators.required],
       data: ['', Validators.required],
       modelo: ['', Validators.required],
       pais: ['', Validators.required],
@@ -107,7 +107,7 @@ export class FormComponent implements OnInit {
     this.phoneForm.setValue({
       id:phone.id,
       nombre: phone.nombre,
-      tipo: phone.tipo,
+      price: phone.price,
       data: phone.data,
       modelo: phone.modelo,
       pais: phone.pais,

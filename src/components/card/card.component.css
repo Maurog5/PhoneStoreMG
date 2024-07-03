@@ -1,5 +1,23 @@
-.section-img-details {
-  padding: 20px;
+.img-iphone12 {
+  width: 100%;
+  max-width: 500px; 
+  height: auto;
+  opacity: 0; /* Ocultar imagen inicialmente */
+  transform: translateY(20px); /* Mover imagen hacia abajo inicialmente */
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out; /* Transición para la opacidad y el movimiento */
+}
+
+.img-iphone12.visible {
+  opacity: 1; /* Mostrar imagen */
+  transform: translateY(0); /* Volver a su posición original */
+}
+
+
+.animation-scroll{
+  opacity: 0; /* Ocultar imagen inicialmente */
+  transform: translateY(20px); /* Mover imagen hacia abajo inicialmente */
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out; /* Transición para la opacidad y el movimiento */
+
 }
 
 .phone-portada {
@@ -12,12 +30,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.img-iphone12 {
-  width: 100%;
-  max-width: 500px; /* Aumenta el tamaño máximo de la imagen */
-  height: auto;
 }
 
 .texto-columna {
@@ -55,7 +67,7 @@
   width: 100%;
 }
 
-.imgcec {
+.img-phone {
   max-width: 100%;
   height: auto;
   border-radius: 8px;
@@ -64,6 +76,7 @@
 .add-product-section {
   padding: 20px;
   text-align: center;
+  background-color: whitesmoke;
 }
 
 .add-product-section .btn-primary {

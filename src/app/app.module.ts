@@ -14,7 +14,6 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { MatIconModule } from '@angular/material/icon';
 import { CarStoreComponent } from '../components/shoppingList/shoppingListcomponent';
 import { CarStoreService } from 'src/components/service/carStore.service';
-import { CardDetailComponent } from '../components/card-detail/card-detail.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTooltipModule } from '@angular/material/tooltip';
@@ -29,7 +28,6 @@ import { FormComponent } from '../components/form/form.component';
     HomeComponent,
     CardComponent,
     CarStoreComponent,
-    CardDetailComponent,
     SuccessfulSaleComponent,
     FormComponent,
     

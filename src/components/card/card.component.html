@@ -1,12 +1,12 @@
 <section class="section-img-details">
   <div class="mt-3 row">
-    <!-- Columna izquierda con la imagen -->
     <div class="phone-portada col-md-6">
-      <div ngClass="mx-3" *ngIf="selectedCellphone"></div>
+      <div ngClass="mx-3"></div>
       <div class="card-container mx-3">
         <h2 class="card-title"></h2>
         <div class="Cardphones">
           <img
+            *ngIf="isImageVisible"
             class="img-iphone12"
             src="../../assets/pngimg.com - iphone_12_PNG3.png"
             alt="iphone12"
@@ -14,59 +14,62 @@
         </div>
       </div>
     </div>
-
-    <!-- Columna derecha -->
-    <div class="animation-scroll col-md-6 texto-columna mt-5">
+    <div class="description-phone col-md-6 texto-columna mt-5">
       <div>
-        <h2>Experimenta la Excelencia con el iPhone 12 Pro</h2>
+        <h2>Experience Excellence with the iPhone 12 Pro</h2>
         <p>
-          Descubre por qué el iPhone 12 Pro es la elección ideal para tu
-          experiencia móvil:
+          Discover why the iPhone 12 Pro is the ideal choice for your mobile
+          experience:
         </p>
         <ol>
           <li>
-            <strong>Tecnología Avanzada:</strong> Disfruta de la potencia y
-            elegancia con su pantalla Super Retina XDR y sistema de cámara
-            profesional.
+            <strong>Advanced Technology:</strong> Enjoy the power and elegance
+            with its Super Retina XDR display and professional camera system.
           </li>
           <li>
-            <strong>Fotos y Videos Impresionantes:</strong> Captura momentos
-            inolvidables con su sistema de cámara profesional y modo Noche.
+            <strong>Stunning Photos and Videos:</strong> Capture unforgettable
+            moments with its professional camera system and Night mode.
           </li>
           <li>
-            <strong>Rendimiento Superior:</strong> Equipado con el chip A14
-            Bionic para un rendimiento excepcional en cualquier tarea.
+            <strong>Superior Performance:</strong> Equipped with the A14 Bionic
+            chip for exceptional performance in any task.
           </li>
           <li>
-            <strong>Diseño Elegante y Duradero:</strong> Su diseño en acero
-            inoxidable y vidrio garantiza resistencia al agua y al polvo.
+            <strong>Elegant and Durable Design:</strong> Its stainless steel and
+            glass design ensures water and dust resistance.
           </li>
           <li>
-            <strong>Experiencia de Usuario Incomparable:</strong> Lleva tu
-            experiencia móvil al siguiente nivel con la comodidad y la
-            innovación de Apple.
+            <strong>Unmatched User Experience:</strong> Take your mobile
+            experience to the next level with Apple's convenience and
+            innovation.
           </li>
         </ol>
-        <p>¡Descubre todo lo que el iPhone 12 Pro puede hacer por ti!</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class=" stock mt-5">
-  <div class="title-section">Productos</div>
+<section class="stock mt-5">
+  <h2 class="title-section"> Products</h2>
   <div class="phones_adds mx-3">
     <div *ngFor="let item of phones" class="phone-card-container">
-      <img class="imgcec" [src]="item?.image_url" alt="{{ item.nombre }}" />
+      <div>
+        <button class="btn btn-secondary">shop</button>
+      </div>
+      <img class="img-phone" [src]="item?.image_url" alt="{{ item.nombre }}" />
       <p class="title-phone-card">{{ item.nombre }}</p>
+      <p class="title-phone-card">${{ item.price }}</p>
     </div>
   </div>
 </section>
 
 <section class="add-product-section mt-5">
   <div class="container text-center">
-    <h2>¿Quieres agregar tu producto al stock?</h2>
-    <p>¡Es fácil y rápido! Simplemente haz clic en el botón a continuación y completa el formulario para añadir tu producto.</p>
-    <a routerLink="/form" class="btn btn-primary">Agregar Producto</a>
+    <h2>Want to add your product to the stock?</h2>
+    <p>
+      It's quick and easy! Just click the button below and complete the form to
+      add your product. 
+    </p>
+    <a routerLink="/form" class="btn btn-primary">Add Product</a>
   </div>
 </section>
