@@ -11,13 +11,18 @@
     <div class="welcome-video-wall-container">
       <div class="welcome-video-content-container">
         <video
-          class="welcome-video-video"
-          [autoplay]="true"
-          preload="none" 
-          [muted]="true"
-          [loop]="true"
-          src="../../assets/video-muestra.mp4"
-        ></video>
+        class="welcome-video-video"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="none"
+      >
+        <source src="../../assets/video-muestra.mp4" type="video/mp4">
+        <source src="../../assets/video-muestra.webm" type="video/webm">
+        <source src="../../assets/video-muestra.ogv" type="video/ogg">
+        Tu navegador no soporta la reproducción de video.
+      </video>
       </div>
     </div>
     <app-card></app-card>
